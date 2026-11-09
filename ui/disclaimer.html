@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <title>免责声明</title>
+  <style>
+    :root { --pink: #FB7299; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #FFF4F7;
+      color: #2B2B2B;
+      font-family: "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI", sans-serif;
+      font-size: 13.5px;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header { padding: 22px 24px 8px; }
+    header h1 { margin: 0; font-size: 19px; }
+    header p { margin: 8px 0 0; color: #8A8A8A; font-size: 12.5px; }
+    main { flex: 1; overflow: auto; padding: 8px 24px 0; }
+    .item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 12px rgba(251, 114, 153, .08);
+      line-height: 1.7;
+    }
+    .item b { color: var(--pink); }
+    footer { padding: 14px 24px 22px; display: flex; gap: 12px; }
+    button {
+      flex: 1;
+      height: 44px;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    #agree { background: var(--pink); color: #fff; }
+    #exit { background: #F1F1F4; color: #555; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>免责声明</h1>
+    <p>首次使用前请阅读并同意以下全部条款；不同意将无法使用本程序。</p>
+  </header>
+
+  <main>
+    <div class="item"><b>1. 非官方产品</b><br />本程序为个人自用的辅助工具，与哔哩哔哩官方无任何隶属或合作关系，不代表官方立场。</div>
+    <div class="item"><b>2. 不模拟点击、不绕过验证</b><br />程序不使用无障碍服务、不模拟真人点击、不破解或绕过验证码与风控机制。</div>
+    <div class="item"><b>3. 自动投币消耗真实硬币</b><br />开启自动投币会真实消耗账号内硬币（1 枚 = 10 经验），该开关默认关闭，开启前请确认账号余额。</div>
+    <div class="item"><b>4. 风险自担</b><br />使用第三方自动化可能违反平台用户协议，可能导致任务不计入、触发风控、账号受限等后果，全部由使用者自行承担。</div>
+    <div class="item"><b>5. Cookie 仅存本地</b><br />登录凭据只保存在本机配置目录，不加密上传任何服务器，本程序不收集也不回传任何个人信息。</div>
+    <div class="item"><b>6. 禁止商用与代挂</b><br />不得用于商业用途、代挂他人账号、多账号批量操作或任何形式的牟利行为。</div>
+    <div class="item"><b>7. 接口变更不保证修复</b><br />所用接口为网页端接口，平台调整后可能失效，本程序不承诺持续可用或及时修复。</div>
+  </main>
+
+  <footer>
+    <button id="exit">不同意，退出</button>
+    <button id="agree">同意并继续</button>
+  </footer>
+  <script src="disclaimer.js"></script>
+</body>
+</html>

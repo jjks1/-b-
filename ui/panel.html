@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <title>打卡进度</title>
+  <style>
+    :root { --pink: #FB7299; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #21212A;
+      color: #fff;
+      font-family: "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI", sans-serif;
+      font-size: 13px;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px 8px;
+      -webkit-app-region: drag;
+    }
+    .head strong { font-size: 14px; letter-spacing: .5px; }
+    .head button {
+      -webkit-app-region: no-drag;
+      background: none; border: none; color: #9A9AA6; font-size: 16px; cursor: pointer;
+    }
+    .status { padding: 2px 14px; color: #C9C9D2; min-height: 40px; line-height: 1.6; }
+    .report {
+      flex: 1;
+      margin: 0 12px 6px;
+      padding: 10px;
+      background: #2A2A34;
+      border-radius: 10px;
+      overflow: auto;
+      white-space: pre-wrap;
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: #E4E4EA;
+    }
+    .actions { display: flex; gap: 8px; padding: 0 12px 12px; }
+    .actions button {
+      flex: 1;
+      height: 34px;
+      border: none;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #34343F;
+      color: #C9C9D2;
+    }
+    #btnRetry { color: #FF9DB8; }
+    #btnDone { color: #fff; background: var(--pink); }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <strong>每日自动打卡 · 哔哩哔哩</strong>
+    <button id="btnClose" title="关闭">×</button>
+  </div>
+
+  <div class="status" id="status">正在准备…</div>
+  <div class="report" id="report"></div>
+
+  <div class="actions">
+    <button id="btnRetry">重新打卡</button>
+    <button id="btnOpenBili">打开B站</button>
+    <button id="btnDone">完成</button>
+  </div>
+
+  <script src="panel.js"></script>
+</body>
+</html>

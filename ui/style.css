@@ -1,0 +1,152 @@
+:root {
+  --pink: #FB7299;
+  --pink-deep: #E85A80;
+  --bg: #FFF4F7;
+  --text: #2B2B2B;
+  --muted: #8A8A8A;
+  --card: #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI", sans-serif;
+  font-size: 14px;
+}
+
+.hero { padding: 26px 28px 10px; }
+.hero h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }
+.hero .sub { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+
+main {
+  padding: 6px 20px 60px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin: 14px 0;
+  box-shadow: 0 6px 18px rgba(251, 114, 153, 0.10);
+}
+
+.account .line1 { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; }
+.account .line2 { margin-top: 6px; color: var(--muted); font-size: 13px; }
+.hint { margin-top: 8px; font-size: 12.5px; color: #D9534F; line-height: 1.5; }
+
+.badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 9px;
+  background: #FFE7EE;
+  color: var(--pink-deep);
+  font-weight: 500;
+}
+.badge.ok { background: #E8FAF0; color: #19A974; }
+.badge.warn { background: #FFF3E0; color: #C77700; }
+
+.report {
+  margin-top: 14px;
+  background: #FFF9FB;
+  border: 1px solid #FFE3EC;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 13px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  color: #444;
+  max-height: 260px;
+  overflow: auto;
+}
+
+.actions { display: flex; gap: 12px; margin-top: 12px; }
+
+.btn {
+  flex: 1;
+  height: 42px;
+  border: none;
+  border-radius: 10px;
+  background: #FFE7EE;
+  color: var(--pink-deep);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter .15s;
+}
+.btn:hover { filter: brightness(0.96); }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
+.btn.primary { background: var(--pink); color: #fff; }
+.btn.ghost { background: #F1F1F4; color: #555; font-weight: 500; }
+.btn.small { height: 34px; font-size: 13px; flex: none; padding: 0 16px; }
+
+.net {
+  margin-top: 12px;
+  font-size: 12.5px;
+  line-height: 1.8;
+  background: #F7F7FA;
+  border-radius: 10px;
+  padding: 12px;
+  white-space: pre-wrap;
+  color: #555;
+}
+.hidden { display: none; }
+
+.switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #F6F6F8;
+  cursor: pointer;
+}
+.switch-row:last-child { border-bottom: none; }
+.switch-text strong { display: block; font-size: 15px; font-weight: 600; }
+.switch-text small { display: block; margin-top: 4px; color: var(--muted); font-size: 12.5px; line-height: 1.5; }
+.switch-text small.warn { color: #D9534F; }
+
+/* 开关外观：和安卓版一致的粉色滑块 */
+.sw {
+  appearance: none;
+  width: 46px;
+  height: 26px;
+  border-radius: 13px;
+  background: #E2E2E7;
+  position: relative;
+  cursor: pointer;
+  transition: background .18s;
+  flex: none;
+}
+.sw::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+  transition: transform .18s;
+}
+.sw:checked { background: var(--pink); }
+.sw:checked::after { transform: translateX(20px); }
+
+.small-card { padding: 14px 18px; }
+.env { font-size: 12.5px; color: var(--muted); line-height: 1.7; white-space: pre-line; }
+
+footer { text-align: center; padding: 0 0 26px; }
+.link {
+  background: none;
+  border: none;
+  color: var(--pink-deep);
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

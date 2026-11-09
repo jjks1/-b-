@@ -1,0 +1,18 @@
+{
+  "name": "bili-daily-checkin-win",
+  "version": "1.0.0",
+  "description": "每日自动打卡（Windows 电脑版）· 开机自启 + 内嵌浏览器登录 + 自动完成哔哩哔哩每日任务",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.js",
+    "smoke": "xvfb-run -a electron . --no-sandbox",
+    "lint": "eslint src ui test --ext .js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "33.4.11",
+    "eslint": "^8.57.0"
+  },
+  "productName": "每日自动打卡"
+}

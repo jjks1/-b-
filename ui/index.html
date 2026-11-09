@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <title>每日自动打卡 · 哔哩哔哩（Windows 版）</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>每日自动打卡</h1>
+    <p class="sub">开机自动打开 · 自动完成哔哩哔哩每日任务</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="account">
+        <div class="line1"><span id="accountText">未登录</span><span id="loginBadge" class="badge">未登录</span></div>
+        <div class="line2">上次打卡：<span id="lastDate">—</span></div>
+        <div id="loginHint" class="hint hidden"></div>
+      </div>
+
+      <div id="reportBox" class="report">暂无打卡记录。点「立即打卡」跑一次。</div>
+
+      <div class="actions">
+        <button id="btnLogin" class="btn">登录哔哩哔哩</button>
+        <button id="btnCheck" class="btn primary">立即打卡</button>
+      </div>
+      <div class="actions">
+        <button id="btnNet" class="btn ghost">网络检测（页面报错时先点这个）</button>
+      </div>
+      <div id="netResult" class="net hidden"></div>
+    </section>
+
+    <section class="card">
+      <label class="switch-row">
+        <div class="switch-text">
+          <strong>开机自动打开并打卡</strong>
+          <small>登录 Windows 后自动运行一次；每天只跑一次</small>
+        </div>
+        <input type="checkbox" id="swBoot" class="sw" />
+      </label>
+
+      <label class="switch-row">
+        <div class="switch-text">
+          <strong>打卡后自动打开 B 站</strong>
+          <small>装了客户端就拉起客户端，没装则用默认浏览器打开网页版</small>
+        </div>
+        <input type="checkbox" id="swOpenApp" class="sw" />
+      </label>
+
+      <label class="switch-row">
+        <div class="switch-text">
+          <strong>自动投币（+10 经验 / 枚）</strong>
+          <small class="warn">⚠️ 会消耗账号内真实硬币，默认关闭</small>
+        </div>
+        <input type="checkbox" id="swCoin" class="sw" />
+      </label>
+
+      <label class="switch-row">
+        <div class="switch-text">
+          <strong>直播间接每日签到</strong>
+          <small>只有打开才会做直播签到</small>
+        </div>
+        <input type="checkbox" id="swLive" class="sw" />
+      </label>
+      <p id="bootHint" class="hint hidden"></p>
+    </section>
+
+    <section class="card small-card">
+      <div class="env" id="envInfo">—</div>
+      <div class="actions">
+        <button id="btnDataDir" class="btn ghost small">打开配置目录</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <button id="btnDisclaimer" class="link">免责声明</button>
+  </footer>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
